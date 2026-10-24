@@ -64,9 +64,10 @@ jobs:
       - name: Longrun kline collect (resumable)
         run: |
           python3 scripts/longrun_collect.py kline \
-            --max-hours ${{ github.event.inputs.max_hours || '5' }} || true
+            --max-hours ${{ github.event.inputs.max_hours || '5' }}
 
       - name: Report coverage
+        if: always()
         run: |
           python3 -c "
           import glob, os
@@ -90,6 +91,7 @@ jobs:
       # 只提交采集产物。reset --soft 把基线移到远端最新但保留工作区改动,
       # 这样别的工作流这期间推的新数据不会被本 run 的旧副本覆盖。
       - name: Commit & push new klines
+        if: always()
         run: |
           cd kline-repo
           git config user.name "longrun-bot"

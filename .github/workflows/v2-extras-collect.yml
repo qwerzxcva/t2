@@ -64,21 +64,24 @@ jobs:
           STOCKS_DB: ${{ github.workspace }}/stocks.duckdb
         run: |
           cd ai-view/scripts
-          python3 collect_v2_extras.py --group financial --limit 50 --max-pages 4 || echo "financial failed"
-          python3 collect_v2_extras.py --group fund --limit 5 || echo "fund failed"
-          python3 collect_v2_extras.py --group announcements --limit 10 || echo "ann failed"
+          rc=0
+          python3 collect_v2_extras.py --group financial --limit 50 --max-pages 4 || rc=1
+          python3 collect_v2_extras.py --group fund --limit 5 || rc=1
+          python3 collect_v2_extras.py --group announcements --limit 10 || rc=1
+          exit $rc
 
       # ── 2. 本地墙源: 7x24 新闻 (Actions 出口可用) ──
       - name: Collect news (sina/em 7x24)
         run: |
           cd ai-view/scripts
-          python3 collect_v2_extras.py --group news --news-limit 50 || echo "news failed"
+          python3 collect_v2_extras.py --group news --news-limit 50
 
       # ── 3. 集思录 10 接口 (匿名 session) ──
       - name: Collect jisilu (LOF/ETF/新股)
         run: |
+          mkdir -p ${{ github.workspace }}/data/research
           cd ai-view/scripts
-          python3 collect_jisilu.py --out ../data/research/jisilu_$(date +%Y%m%d).json || echo "jisilu failed"
+          python3 collect_jisilu.py --out "${{ github.workspace }}/data/research/jisilu_$(date +%Y%m%d).json"
 
       # ── 4. 本地墙源验证: push2delay / np-listapi 在 Actions 的通达性 ──
       - name: Probe blocked sources (informational)
@@ -109,7 +112,7 @@ jobs:
       - name: Export DB snapshot
         run: |
           cd ai-view/scripts
-          python3 - <<'PY' || true
+          python3 - <<'PY'
           import json, duckdb, os
           db = os.environ.get("STOCKS_DB") or "stocks.duckdb"
           if not os.path.exists(db):
@@ -130,21 +133,23 @@ jobs:
           CST = timezone(timedelta(hours=8))
           out["timestamp"] = datetime.now(CST).isoformat(timespec="seconds")
           out["source"] = "gha_v2_snapshot"
-          os.makedirs("data/research", exist_ok=True)
-          p = f"data/research/v2_snapshot_{datetime.now(CST).strftime('%Y%m%d')}.json"
+          root = os.environ["GITHUB_WORKSPACE"]
+          os.makedirs(os.path.join(root, "data/research"), exist_ok=True)
+          p = os.path.join(root, "data", "research", f"v2_snapshot_{datetime.now(CST).strftime('%Y%m%d')}.json")
           json.dump(out, open(p,"w",encoding="utf-8"), ensure_ascii=False, indent=2, default=str)
           print(f"  -> {p}")
           PY
 
       # ── 6. 推送 ──
       - name: Commit & push
+        if: always()
         run: |
           git config user.name "v2-collect-bot"
           git config user.email "741059079@qq.com"
           git fetch origin main
           git reset --soft origin/main
           # DB 文件不入库 (二进制 + 大); 只推 JSON 快照
-          git add data/research/ || true
+          mkdir -p data/research && git add data/research/
           ts=$(TZ=Asia/Shanghai date '+%Y%m%d_%H%M')
           if git diff --quiet --cached HEAD; then
             echo "no changes"

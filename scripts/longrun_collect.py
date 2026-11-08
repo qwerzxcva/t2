@@ -20,13 +20,16 @@ longrun_collect.py — Codespace 长跑采集 (突破 Actions 6h 限制)
 """
 import argparse
 import glob
+import gzip
 import json
+import math
 import os
 import random
+import re
 import sys
 import time
 import urllib.request
-from datetime import datetime, timezone, timedelta
+from datetime import datetime, timedelta, timezone
 
 CST = timezone(timedelta(hours=8))
 UA = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/120",
@@ -38,9 +41,11 @@ try:
     from paths import BULK
 except Exception:
     BULK = os.environ.get("STOCKS_KLINE_BULK") or "/workspaces/stocks-data-kline/data/bulk"
+BULK = os.environ.get("STOCKS_KLINE_BULK") or BULK
 
 PROGRESS = os.path.join(BULK, "_longrun_progress.json")
-RECENT = os.path.join(BULK, "day_qfq_recent.csv")
+RECENT = os.path.join(BULK, f"day_qfq_longrun_{os.environ['GITHUB_RUN_ID']}.csv.gz"
+                      if os.environ.get("GITHUB_RUN_ID") else "day_qfq_recent.csv")
 UNIVERSE = os.path.join(BULK, "universe.csv")
 
 
@@ -50,30 +55,81 @@ def log(msg):
 
 def load_universe():
     codes = []
-    if not os.path.exists(UNIVERSE):
-        log(f"universe 不存在: {UNIVERSE}")
-        return codes
-    with open(UNIVERSE, encoding="utf-8") as f:
-        for line in f:
-            line = line.strip()
-            if not line or line.startswith("#") or "|" not in line:
-                continue
-            codes.append(line.split("|")[0].strip())
-    return [c for c in codes if c]
+    source = os.environ.get("STOCKS_UNIVERSE_JSON") or UNIVERSE
+    with open(source, encoding="utf-8") as f:
+        if os.environ.get("STOCKS_UNIVERSE_JSON"):
+            items = json.load(f)
+            if not isinstance(items, list):
+                raise ValueError("股票池必须为 list")
+            for item in items:
+                if (not isinstance(item, list) or len(item) != 3
+                        or not all(isinstance(v, str) for v in item)
+                        or not re.fullmatch(r"(sh|sz|bj)[0-9]{6}", item[0])
+                        or item[0][2:] != item[1]):
+                    raise ValueError("股票池存在无效代码或结构")
+                codes.append(item[0])
+        else:
+            for line in f:
+                line = line.strip()
+                if not line or line.startswith("#"):
+                    continue
+                if "|" not in line:
+                    raise ValueError("股票池存在无效 CSV 行")
+                code = line.split("|")[0].strip()
+                if not re.fullmatch(r"(sh|sz|bj)[0-9]{6}", code):
+                    raise ValueError("股票池存在无效代码")
+                codes.append(code)
+    stocks = list(dict.fromkeys(c for c in codes if re.fullmatch(
+        r"sh(?:600|601|603|605|688|689)[0-9]{3}|"
+        r"sz(?:000|001|002|003|300|301)[0-9]{3}|"
+        r"bj(?:43|83|87|88|92)[0-9]{4}", c)))
+    if not stocks:
+        raise ValueError("股票池为空或不含沪深北普通股票")
+    log(f"历史补录股票池: {source}, 来源日期="
+        f"{os.environ.get('STOCKS_UNIVERSE_DATE', 'unknown')}; "
+        "覆盖率仅限给定股票池，不代表最新全市场")
+    return stocks
+
+
+def parse_day(row):
+    if len(row) < 6:
+        raise ValueError("日线字段不足")
+    datetime.strptime(row[0], "%Y-%m-%d")
+    numbers = [float(v) for v in row[1:6]]
+    if (not all(math.isfinite(v) for v in numbers)
+            or min(numbers[:4]) <= 0 or numbers[4] < 0
+            or numbers[2] < max(numbers[0], numbers[1], numbers[3])
+            or numbers[3] > min(numbers[0], numbers[1])):
+        raise ValueError("日线数值无效")
+    return [row[0], *numbers]
 
 
 def load_covered():
     """已覆盖的代码集合 (所有 bulk csv + recent)"""
     have = set()
-    files = glob.glob(os.path.join(BULK, "day_qfq_*.csv"))
+    files = (glob.glob(os.path.join(BULK, "day_qfq_*.csv"))
+             + glob.glob(os.path.join(BULK, "day_qfq_*.csv.gz")))
     for p in files:
-        with open(p, encoding="utf-8", errors="replace") as f:
+        opener = gzip.open if p.endswith(".gz") else open
+        with opener(p, "rt", encoding="utf-8") as f:
             for line in f:
-                line = line.strip()
-                if not line or line.startswith("#") or "|" not in line:
+                parts = line.strip().split("|")
+                if len(parts) != 7 or parts[0] in have or not re.fullmatch(r"(sh|sz|bj)[0-9]{6}", parts[0]):
                     continue
-                have.add(line.split("|")[0].strip())
+                try:
+                    parse_day(parts[1:])
+                except (ValueError, TypeError):
+                    continue
+                have.add(parts[0])
     return have
+
+
+def report_coverage():
+    universe = set(load_universe())
+    have = load_covered() & universe
+    log(f"给定股票池 covered={len(have)}/{len(universe)} "
+        f"({len(have)/len(universe)*100:.1f}%), missing={len(universe - have)}")
+    return 0
 
 
 def load_progress():
@@ -87,35 +143,34 @@ def load_progress():
 
 def save_progress(prog):
     prog["last_ts"] = datetime.now(CST).isoformat(timespec="seconds")
-    with open(PROGRESS, "w", encoding="utf-8") as f:
+    temporary = PROGRESS + ".tmp"
+    with open(temporary, "w", encoding="utf-8") as f:
         json.dump(prog, f, ensure_ascii=False)
+    os.replace(temporary, PROGRESS)
 
 
 def fetch_kline(code, n=120):
     url = (f"https://web.ifzq.gtimg.cn/appstock/app/fqkline/get"
-           f"?param={code},day,,,{n},qfq")
+           f"?param={code},day,,,{n},")
     for attempt in range(3):
         try:
             body = urllib.request.urlopen(urllib.request.Request(url, headers=UA),
                                           timeout=15).read()
             d = json.loads(body.decode("utf-8"))
             node = (d.get("data") or {}).get(code) or {}
-            arr = node.get("qfqday") or node.get("day") or []
+            arr = node.get("day") or []
             rows = []
             for r in arr:
-                if len(r) < 6:
-                    continue
                 try:
-                    rows.append([r[0], float(r[1]), float(r[2]),
-                                 float(r[3]), float(r[4]), float(r[5])])
-                except ValueError:
+                    rows.append(parse_day(r))
+                except (ValueError, TypeError):
                     continue
-            return rows, None
+            return rows, None if rows else "no_raw_day"
         except urllib.error.HTTPError as e:
             if e.code in (501, 429):
                 return [], f"ratelimit_{e.code}"
             return [], f"http_{e.code}"
-        except Exception as e:
+        except Exception:
             if attempt < 2:
                 time.sleep(1)
     return [], "network"
@@ -125,7 +180,7 @@ def run_kline(max_hours=4.0, batch_pause=0.8):
     """补K线主循环"""
     t0 = time.time()
     universe = load_universe()
-    covered = load_covered()
+    covered = load_covered() & set(universe)
     prog = load_progress()
     prog["runs"] = prog.get("runs", 0) + 1
 
@@ -134,13 +189,14 @@ def run_kline(max_hours=4.0, batch_pause=0.8):
         f"(第 {prog['runs']} 轮)")
 
     if not todo:
-        log("已全覆盖 ✅")
+        log("给定历史股票池已覆盖（至少一条有效原始日线，不代表历史完整）")
         return 0
 
     backoff = 60
     n_ok = 0
     n_fail = 0
-    out = open(RECENT, "a", encoding="utf-8")
+    out = None
+    interrupted = False
 
     try:
         for i, code in enumerate(todo):
@@ -150,8 +206,11 @@ def run_kline(max_hours=4.0, batch_pause=0.8):
 
             rows, err = fetch_kline(code)
             if rows:
+                if out is None:
+                    opener = gzip.open if RECENT.endswith(".gz") else open
+                    out = opener(RECENT, "at", encoding="utf-8")
                 for r in rows:
-                    out.write(f"{code}|{r[0]},{r[1]},{r[2]},{r[3]},{r[4]},{r[5]}\n")
+                    out.write(code + "|" + "|".join(map(str, r)) + "\n")
                 out.flush()
                 n_ok += 1
                 backoff = 60
@@ -165,6 +224,7 @@ def run_kline(max_hours=4.0, batch_pause=0.8):
                     backoff = min(backoff * 2, 600)
                 else:
                     prog["failed"].append(code)
+                    time.sleep(batch_pause + random.uniform(0, 0.3))
                 save_progress(prog)
                 continue
 
@@ -176,15 +236,17 @@ def run_kline(max_hours=4.0, batch_pause=0.8):
 
             time.sleep(batch_pause + random.uniform(0, 0.3))
     except KeyboardInterrupt:
+        interrupted = True
         log("用户中断")
     finally:
-        out.close()
+        if out is not None:
+            out.close()
         save_progress(prog)
 
-    covered2 = load_covered()
+    covered2 = load_covered() & set(universe)
     log(f"本轮结束: 新增 {n_ok}, 失败 {n_fail}, 覆盖率 "
         f"{len(covered2)}/{len(universe)} ({len(covered2)/len(universe)*100:.1f}%)")
-    return 0
+    return 130 if interrupted else (0 if n_ok else 1)
 
 
 def run_realtime(interval=60):
@@ -256,12 +318,16 @@ def run_realtime(interval=60):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("mode", choices=["kline", "realtime"])
+    ap.add_argument("mode", choices=["kline", "realtime", "coverage"])
     ap.add_argument("--max-hours", type=float, default=4.0)
     ap.add_argument("--interval", type=int, default=60)
     args = ap.parse_args()
 
+    if args.mode == "coverage":
+        return report_coverage()
     if args.mode == "kline":
+        if not math.isfinite(args.max_hours) or args.max_hours <= 0:
+            ap.error("--max-hours 必须为有限正数")
         return run_kline(max_hours=args.max_hours)
     if args.mode == "realtime":
         return run_realtime(interval=args.interval)

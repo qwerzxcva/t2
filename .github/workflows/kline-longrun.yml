@@ -35,13 +35,15 @@ jobs:
     env:
       TZ: Asia/Shanghai
       STOCKS_KLINE_BULK: ${{ github.workspace }}/kline-repo/data/bulk
+      STOCKS_UNIVERSE_JSON: ${{ github.workspace }}/universe-repo/data/symbols/all_symbols.json
+      MAX_HOURS: ${{ github.event.inputs.max_hours || '5' }}
     steps:
       # 本仓: 提供 scripts/longrun_collect.py
       - uses: actions/checkout@v4
         with:
           token: ${{ secrets.GH_TOKEN }}
 
-      # 主仓: universe + progress + 采集结果都在 data/bulk 下
+      # 主仓: 历史分片 + progress + 本轮采集结果
       - uses: actions/checkout@v4
         with:
           repository: qwerzxcva/stocks-data-kline
@@ -49,74 +51,77 @@ jobs:
           path: kline-repo
           fetch-depth: 0
 
-      - name: Sync kline repo to remote tip
-        run: |
-          cd kline-repo
-          git fetch origin main
-          git reset --hard origin/main
-          echo "bulk files: $(ls data/bulk/ | wc -l)"
-          echo "universe: $(grep -vc '^#' data/bulk/universe.csv)"
+      - uses: actions/checkout@v4
+        with:
+          repository: jiegengxiangjianxue1/stocks
+          token: ${{ secrets.GH_TOKEN }}
+          path: universe-repo
+          fetch-depth: 0
+          sparse-checkout: data/symbols/all_symbols.json
+          sparse-checkout-cone-mode: false
 
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
 
+      - name: Collector offline regression tests
+        run: python3 -m unittest discover -s scripts -p test_longrun_collect.py -v
+
+      - name: Validate budget and record historical universe provenance
+        run: |
+          set -euo pipefail
+          python3 -c 'import math, os; h = float(os.environ["MAX_HOURS"]); assert math.isfinite(h) and 0 < h <= 5.5, "max_hours must be positive and <= 5.5"'
+          echo "universe source: jiegengxiangjianxue1/stocks:data/symbols/all_symbols.json"
+          git -C universe-repo rev-parse HEAD
+          sha256sum "$STOCKS_UNIVERSE_JSON"
+          source_date=$(git -C universe-repo log -1 --format=%cI -- data/symbols/all_symbols.json)
+          test -n "$source_date"
+          echo "historical universe source date: $source_date (not current full market)"
+          echo "STOCKS_UNIVERSE_DATE=$source_date" >> "$GITHUB_ENV"
+
       - name: Longrun kline collect (resumable)
         run: |
-          python3 scripts/longrun_collect.py kline \
-            --max-hours ${{ github.event.inputs.max_hours || '5' }}
+          python3 scripts/longrun_collect.py kline --max-hours "$MAX_HOURS"
 
       - name: Report coverage
         if: always()
         run: |
-          python3 -c "
-          import glob, os
-          bulk = os.environ['STOCKS_KLINE_BULK']
-          uni = set()
-          for line in open(os.path.join(bulk, 'universe.csv'), encoding='utf-8', errors='replace'):
-              line = line.strip()
-              if line and not line.startswith('#') and '|' in line:
-                  uni.add(line.split('|')[0].strip())
-          have = set()
-          for p in glob.glob(os.path.join(bulk, 'day_qfq_*.csv')):
-              with open(p, encoding='utf-8', errors='replace') as f:
-                  for line in f:
-                      line = line.strip()
-                      if line and not line.startswith('#') and '|' in line:
-                          have.add(line.split('|')[0].strip())
-          print(f'covered: {len(have)}/{len(uni)} ({len(have)/max(len(uni),1)*100:.1f}%)')
-          print(f'missing: {len(uni - have)}')
-          "
+          python3 scripts/longrun_collect.py coverage
 
-      # 只提交采集产物。reset --soft 把基线移到远端最新但保留工作区改动,
-      # 这样别的工作流这期间推的新数据不会被本 run 的旧副本覆盖。
+      # 仅提交本轮唯一分片；正常 rebase 保留远端修改，冲突或推送失败显红。
       - name: Commit & push new klines
         if: always()
         run: |
-          cd kline-repo
-          git config user.name "longrun-bot"
-          git config user.email "741059079@qq.com"
-          git fetch origin main
-          git reset --soft origin/main
-          git add data/bulk/day_qfq_recent.csv data/bulk/_longrun_progress.json
-          ts=$(TZ=Asia/Shanghai date '+%Y%m%d_%H%M')
-          if git diff --cached --quiet HEAD; then
-            echo "no changes"
-          else
-            git commit -m "kline-longrun: $ts" || echo "commit failed"
-            git -c http.version=HTTP/1.1 push origin main || {
-              echo "push raced, retrying once"
+          set -euo pipefail
+          artifact="data/bulk/day_qfq_longrun_${GITHUB_RUN_ID}.csv.gz"
+          if [ -f "kline-repo/$artifact" ]; then
+            cd kline-repo
+            git config user.name "longrun-bot"
+            git config user.email "741059079@qq.com"
+            git add -- "$artifact"
+            if [ -f data/bulk/_longrun_progress.json ]; then
+              git add -- data/bulk/_longrun_progress.json
+            fi
+            if ! git diff --cached --quiet HEAD; then
+              ts=$(TZ=Asia/Shanghai date '+%Y%m%d_%H%M')
+              git commit -m "kline-longrun: $ts"
               git fetch origin main
-              git reset --soft origin/main
-              git add data/bulk/day_qfq_recent.csv data/bulk/_longrun_progress.json
-              git commit -m "kline-longrun: $ts" 2>/dev/null || true
-              git push origin main || echo "push failed again, next run continues"
-            }
+              git rebase origin/main
+              git -c http.version=HTTP/1.1 push origin HEAD:main
+            fi
+          else
+            echo "no new kline artifact; collection/coverage step status is preserved"
           fi
 
       - name: Summary
         run: |
           {
             echo "## kline-longrun $(TZ=Asia/Shanghai date '+%H:%M:%S')"
-            echo "- recent.csv: $(wc -l < kline-repo/data/bulk/day_qfq_recent.csv 2>/dev/null || echo 0) lines"
+            echo "- Coverage is limited to the dated historical universe; not current full-market coverage."
+            artifact="$STOCKS_KLINE_BULK/day_qfq_longrun_${GITHUB_RUN_ID}.csv.gz"
+            if [ -f "$artifact" ]; then
+              echo "- New raw-price rows: $(gzip -cd "$artifact" | wc -l)"
+            else
+              echo "- No new kline artifact. See collection and coverage status."
+            fi
           } >> $GITHUB_STEP_SUMMARY

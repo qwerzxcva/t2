@@ -1,0 +1,129 @@
+{
+  "date": "2026-10-12",
+  "market_phase": "decline",
+  "macro_signals": {
+    "sh000001": {
+      "name": "上证综指",
+      "phase": "decline",
+      "score": -6,
+      "ma_bull": false,
+      "macd_bull": false,
+      "vr": 0.68,
+      "vol_regime": "high",
+      "rsi": 22.3
+    },
+    "sz399001": {
+      "name": "深证成指",
+      "phase": "decline",
+      "score": -7,
+      "ma_bull": false,
+      "macd_bull": false,
+      "vr": 0.32,
+      "vol_regime": "high",
+      "rsi": 26.6
+    },
+    "sh000300": {
+      "name": "沪深300",
+      "phase": "decline",
+      "score": -7,
+      "ma_bull": false,
+      "macd_bull": false,
+      "vr": 0.33,
+      "vol_regime": "high",
+      "rsi": 28.8
+    },
+    "sz399006": {
+      "name": "创业板指",
+      "phase": "decline",
+      "score": -6,
+      "ma_bull": false,
+      "macd_bull": false,
+      "vr": 0.35,
+      "vol_regime": "normal",
+      "rsi": 26.8
+    },
+    "sh000688": {
+      "name": "科创50",
+      "phase": "decline",
+      "score": -5,
+      "ma_bull": false,
+      "macd_bull": false,
+      "vr": 0.78,
+      "vol_regime": "normal",
+      "rsi": 33.9
+    }
+  },
+  "sector_rotation": {
+    "sh": {
+      "score": -1,
+      "window": [
+        "volume_confirmed"
+      ],
+      "avg_chg_5d": -1.1391293213828426,
+      "avg_chg_20d": 0,
+      "vol_ratio": 3.8480281690140847
+    },
+    "sz": {
+      "score": -1,
+      "window": [
+        "volume_confirmed"
+      ],
+      "avg_chg_5d": -1.1778505942275042,
+      "avg_chg_20d": 0,
+      "vol_ratio": 6.06241765704584
+    }
+  },
+  "top_sectors": [
+    [
+      "sh",
+      {
+        "score": -1,
+        "window": [
+          "volume_confirmed"
+        ],
+        "avg_chg_5d": -1.1391293213828426,
+        "avg_chg_20d": 0,
+        "vol_ratio": 3.8480281690140847
+      }
+    ],
+    [
+      "sz",
+      {
+        "score": -1,
+        "window": [
+          "volume_confirmed"
+        ],
+        "avg_chg_5d": -1.1778505942275042,
+        "avg_chg_20d": 0,
+        "vol_ratio": 6.06241765704584
+      }
+    ]
+  ],
+  "bottom_sectors": [
+    [
+      "sh",
+      {
+        "score": -1,
+        "window": [
+          "volume_confirmed"
+        ],
+        "avg_chg_5d": -1.1391293213828426,
+        "avg_chg_20d": 0,
+        "vol_ratio": 3.8480281690140847
+      }
+    ],
+    [
+      "sz",
+      {
+        "score": -1,
+        "window": [
+          "volume_confirmed"
+        ],
+        "avg_chg_5d": -1.1778505942275042,
+        "avg_chg_20d": 0,
+        "vol_ratio": 6.06241765704584
+      }
+    ]
+  ],
+  "phase_pools": {}
+}

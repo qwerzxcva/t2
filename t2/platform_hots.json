@@ -1,0 +1,64 @@
+{
+  "ts": "2026-10-12T01:51:20.054756+08:00",
+  "date": "2026-10-12",
+  "items": [
+    {
+      "ts": "",
+      "title": "[抖音热榜] 纯过日子就是好好生活",
+      "theme": [],
+      "sentiment": "neu",
+      "src": "douyin-hot",
+      "hot_value": 12138744,
+      "note_count": null
+    },
+    {
+      "ts": "",
+      "title": "[抖音热榜] 郑钦文首夺中网女单冠军",
+      "theme": [],
+      "sentiment": "neu",
+      "src": "douyin-hot",
+      "hot_value": 11939849,
+      "note_count": null
+    },
+    {
+      "ts": "",
+      "title": "[抖音热榜] 2026世界市长对话洛阳",
+      "theme": [],
+      "sentiment": "neu",
+      "src": "douyin-hot",
+      "hot_value": 11379291,
+      "note_count": null
+    },
+    {
+      "ts": "",
+      "title": "[小红书] 想了解些什么？",
+      "theme": [],
+      "sentiment": "neu",
+      "src": "xhs-explore"
+    },
+    {
+      "ts": "",
+      "title": "[小红书] 做旅行攻略",
+      "theme": [],
+      "sentiment": "neu",
+      "src": "xhs-explore"
+    },
+    {
+      "ts": "",
+      "title": "[小红书] 答疑解惑",
+      "theme": [],
+      "sentiment": "neu",
+      "src": "xhs-explore"
+    }
+  ],
+  "meta": {
+    "sources": [
+      "douyin-hot",
+      "xhs-explore",
+      "weibo-hot",
+      "xueqiu-hot",
+      "qq-news-author"
+    ],
+    "zero_cred": true
+  }
+}

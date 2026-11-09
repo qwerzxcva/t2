@@ -1,0 +1,27 @@
+{
+  "ts": "2026-10-12T02:34:09.786708+08:00",
+  "weights": {
+    "rsi": 0.25,
+    "ma_dev": 0.2,
+    "r5_momentum": 0.15,
+    "lianban": 0.15,
+    "vol": 0.15,
+    "pos20": 0.1
+  },
+  "deltas": {},
+  "signal_stats": {
+    "动量延续": {
+      "total": 3,
+      "hit": 3,
+      "hit_rate": 1.0
+    },
+    "追高警惕": {
+      "total": 1,
+      "hit": 0,
+      "hit_rate": 0.0
+    }
+  },
+  "meta": {
+    "rule": "hit>60% +0.02 / hit<40% -0.02 / cap 0.06 / norm=1.0 / min_samples 10"
+  }
+}

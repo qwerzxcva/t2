@@ -1,0 +1,59 @@
+{
+  "date": "2026-10-12",
+  "hot_stocks": [
+    {
+      "rank": 1,
+      "name": "AI",
+      "hit_count": 15,
+      "source": "ths_hot"
+    },
+    {
+      "rank": 2,
+      "name": "机器人",
+      "hit_count": 5,
+      "source": "ths_hot"
+    },
+    {
+      "rank": 3,
+      "name": "化工",
+      "hit_count": 1,
+      "source": "ths_hot"
+    },
+    {
+      "rank": 4,
+      "name": "消费",
+      "hit_count": 1,
+      "source": "ths_hot"
+    },
+    {
+      "rank": 5,
+      "name": "光伏",
+      "hit_count": 1,
+      "source": "ths_hot"
+    },
+    {
+      "rank": 6,
+      "name": "通信",
+      "hit_count": 1,
+      "source": "ths_hot"
+    },
+    {
+      "rank": 7,
+      "name": "钢铁",
+      "hit_count": 1,
+      "source": "ths_hot"
+    },
+    {
+      "rank": 8,
+      "name": "半导体",
+      "hit_count": 1,
+      "source": "ths_hot"
+    },
+    {
+      "rank": 9,
+      "name": "新能源",
+      "hit_count": 1,
+      "source": "ths_hot"
+    }
+  ]
+}

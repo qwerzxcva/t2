@@ -1,0 +1,15 @@
+{
+  "date": "2026-10-12",
+  "ts": "1456",
+  "market_phase": "decline",
+  "rounds": 5,
+  "candidates": 4564,
+  "kline_covered": 238,
+  "kline_scored": 0,
+  "snap_scored": 2086,
+  "tier_buy_count": 0,
+  "tier_watch_count": 0,
+  "tier_avoid_count": 2086,
+  "buy": [],
+  "watch": []
+}

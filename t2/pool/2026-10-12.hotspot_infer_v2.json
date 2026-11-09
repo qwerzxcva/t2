@@ -1,0 +1,1573 @@
+{
+  "date": "2026-10-12",
+  "ts": "1318",
+  "market_phase": "decline",
+  "total_filtered": 20156,
+  "strong_count": 0,
+  "watch_count": 7775,
+  "strong": [],
+  "watch": [
+    {
+      "score": 3.5,
+      "signals": {
+        "sentiment": [
+          "主线(1条)"
+        ],
+        "cycle": [
+          "周期decline(风险)"
+        ],
+        "sector": [
+          "活跃出版"
+        ],
+        "kline": [
+          "温和+1.4%",
+          "快照模式"
+        ],
+        "capital": []
+      },
+      "scores": {
+        "sentiment": 5,
+        "cycle": -3,
+        "sector": 7,
+        "kline": 5,
+        "capital": 0
+      },
+      "has_kline": [],
+      "price_pct": null,
+      "rsi": null,
+      "golden_cross": false,
+      "main_net": 0.0,
+      "chg_pct": 1.35,
+      "price": 5.99,
+      "industry": "出版",
+      "theme": "贵金属",
+      "code": "600229",
+      "name": "城市传媒"
+    },
+    {
+      "score": 3.5,
+      "signals": {
+        "sentiment": [
+          "主线(1条)"
+        ],
+        "cycle": [
+          "周期decline(风险)"
+        ],
+        "sector": [
+          "活跃出版"
+        ],
+        "kline": [
+          "温和+2.0%",
+          "快照模式"
+        ],
+        "capital": []
+      },
+      "scores": {
+        "sentiment": 5,
+        "cycle": -3,
+        "sector": 7,
+        "kline": 5,
+        "capital": 0
+      },
+      "has_kline": [],
+      "price_pct": null,
+      "rsi": null,
+      "golden_cross": false,
+      "main_net": 0.0,
+      "chg_pct": 2.05,
+      "price": 7.97,
+      "industry": "出版",
+      "theme": "贵金属",
+      "code": "600373",
+      "name": "中文传媒"
+    },
+    {
+      "score": 3.5,
+      "signals": {
+        "sentiment": [
+          "主线(1条)"
+        ],
+        "cycle": [
+          "周期decline(风险)"
+        ],
+        "sector": [
+          "活跃出版"
+        ],
+        "kline": [
+          "温和+2.8%",
+          "快照模式"
+        ],
+        "capital": []
+      },
+      "scores": {
+        "sentiment": 5,
+        "cycle": -3,
+        "sector": 7,
+        "kline": 5,
+        "capital": 0
+      },
+      "has_kline": [],
+      "price_pct": null,
+      "rsi": null,
+      "golden_cross": false,
+      "main_net": 0.0,
+      "chg_pct": 2.78,
+      "price": 7.77,
+      "industry": "出版",
+      "theme": "贵金属",
+      "code": "600757",
+      "name": "长江传媒"
+    },
+    {
+      "score": 3.5,
+      "signals": {
+        "sentiment": [
+          "主线(1条)"
+        ],
+        "cycle": [
+          "周期decline(风险)"
+        ],
+        "sector": [
+          "活跃影视院线"
+        ],
+        "kline": [
+          "温和+0.3%",
+          "快照模式"
+        ],
+        "capital": []
+      },
+      "scores": {
+        "sentiment": 5,
+        "cycle": -3,
+        "sector": 7,
+        "kline": 5,
+        "capital": 0
+      },
+      "has_kline": [],
+      "price_pct": null,
+      "rsi": null,
+      "golden_cross": false,
+      "main_net": 0.0,
+      "chg_pct": 0.29,
+      "price": 13.97,
+      "industry": "影视院线",
+      "theme": "贵金属",
+      "code": "600977",
+      "name": "中国电影"
+    },
+    {
+      "score": 3.5,
+      "signals": {
+        "sentiment": [
+          "主线(1条)"
+        ],
+        "cycle": [
+          "周期decline(风险)"
+        ],
+        "sector": [
+          "活跃出版"
+        ],
+        "kline": [
+          "温和+2.4%",
+          "快照模式"
+        ],
+        "capital": []
+      },
+      "scores": {
+        "sentiment": 5,
+        "cycle": -3,
+        "sector": 7,
+        "kline": 5,
+        "capital": 0
+      },
+      "has_kline": [],
+      "price_pct": null,
+      "rsi": null,
+      "golden_cross": false,
+      "main_net": 0.0,
+      "chg_pct": 2.41,
+      "price": 7.23,
+      "industry": "出版",
+      "theme": "贵金属",
+      "code": "601019",
+      "name": "山东出版"
+    },
+    {
+      "score": 3.5,
+      "signals": {
+        "sentiment": [
+          "主线(1条)"
+        ],
+        "cycle": [
+          "周期decline(风险)"
+        ],
+        "sector": [
+          "活跃出版"
+        ],
+        "kline": [
+          "温和+2.1%",
+          "快照模式"
+        ],
+        "capital": []
+      },
+      "scores": {
+        "sentiment": 5,
+        "cycle": -3,
+        "sector": 7,
+        "kline": 5,
+        "capital": 0
+      },
+      "has_kline": [],
+      "price_pct": null,
+      "rsi": null,
+      "golden_cross": false,
+      "main_net": 0.0,
+      "chg_pct": 2.13,
+      "price": 11.02,
+      "industry": "出版",
+      "theme": "贵金属",
+      "code": "601098",
+      "name": "中南传媒"
+    },
+    {
+      "score": 3.5,
+      "signals": {
+        "sentiment": [
+          "主线(1条)"
+        ],
+        "cycle": [
+          "周期decline(风险)"
+        ],
+        "sector": [
+          "活跃出版"
+        ],
+        "kline": [
+          "温和+2.4%",
+          "快照模式"
+        ],
+        "capital": []
+      },
+      "scores": {
+        "sentiment": 5,
+        "cycle": -3,
+        "sector": 7,
+        "kline": 5,
+        "capital": 0
+      },
+      "has_kline": [],
+      "price_pct": null,
+      "rsi": null,
+      "golden_cross": false,
+      "main_net": 0.0,
+      "chg_pct": 2.38,
+      "price": 22.76,
+      "industry": "出版",
+      "theme": "贵金属",
+      "code": "601858",
+      "name": "中国科传"
+    },
+    {
+      "score": 3.5,
+      "signals": {
+        "sentiment": [
+          "主线(1条)"
+        ],
+        "cycle": [
+          "周期decline(风险)"
+        ],
+        "sector": [
+          "活跃出版"
+        ],
+        "kline": [
+          "温和+3.5%",
+          "快照模式"
+        ],
+        "capital": []
+      },
+      "scores": {
+        "sentiment": 5,
+        "cycle": -3,
+        "sector": 7,
+        "kline": 5,
+        "capital": 0
+      },
+      "has_kline": [],
+      "price_pct": null,
+      "rsi": null,
+      "golden_cross": false,
+      "main_net": 0.0,
+      "chg_pct": 3.49,
+      "price": 13.35,
+      "industry": "出版",
+      "theme": "贵金属",
+      "code": "601900",
+      "name": "南方传媒"
+    },
+    {
+      "score": 3.5,
+      "signals": {
+        "sentiment": [
+          "主线(1条)"
+        ],
+        "cycle": [
+          "周期decline(风险)"
+        ],
+        "sector": [
+          "活跃出版"
+        ],
+        "kline": [
+          "温和+1.3%",
+          "快照模式"
+        ],
+        "capital": []
+      },
+      "scores": {
+        "sentiment": 5,
+        "cycle": -3,
+        "sector": 7,
+        "kline": 5,
+        "capital": 0
+      },
+      "has_kline": [],
+      "price_pct": null,
+      "rsi": null,
+      "golden_cross": false,
+      "main_net": 0.0,
+      "chg_pct": 1.29,
+      "price": 7.83,
+      "industry": "出版",
+      "theme": "贵金属",
+      "code": "601921",
+      "name": "浙版传媒"
+    },
+    {
+      "score": 3.5,
+      "signals": {
+        "sentiment": [
+          "主线(1条)"
+        ],
+        "cycle": [
+          "周期decline(风险)"
+        ],
+        "sector": [
+          "活跃出版"
+        ],
+        "kline": [
+          "温和+3.5%",
+          "快照模式"
+        ],
+        "capital": []
+      },
+      "scores": {
+        "sentiment": 5,
+        "cycle": -3,
+        "sector": 7,
+        "kline": 5,
+        "capital": 0
+      },
+      "has_kline": [],
+      "price_pct": null,
+      "rsi": null,
+      "golden_cross": false,
+      "main_net": 0.0,
+      "chg_pct": 3.48,
+      "price": 8.92,
+      "industry": "出版",
+      "theme": "贵金属",
+      "code": "601928",
+      "name": "凤凰传媒"
+    },
+    {
+      "score": 3.5,
+      "signals": {
+        "sentiment": [
+          "主线(1条)"
+        ],
+        "cycle": [
+          "周期decline(风险)"
+        ],
+        "sector": [
+          "活跃影视院线"
+        ],
+        "kline": [
+          "温和+3.6%",
+          "快照模式"
+        ],
+        "capital": []
+      },
+      "scores": {
+        "sentiment": 5,
+        "cycle": -3,
+        "sector": 7,
+        "kline": 5,
+        "capital": 0
+      },
+      "has_kline": [],
+      "price_pct": null,
+      "rsi": null,
+      "golden_cross": false,
+      "main_net": 0.0,
+      "chg_pct": 3.62,
+      "price": 16.89,
+      "industry": "影视院线",
+      "theme": "贵金属",
+      "code": "603103",
+      "name": "横店影视"
+    },
+    {
+      "score": 3.5,
+      "signals": {
+        "sentiment": [
+          "主线(1条)"
+        ],
+        "cycle": [
+          "周期decline(风险)"
+        ],
+        "sector": [
+          "活跃影视院线"
+        ],
+        "kline": [
+          "温和+1.4%",
+          "快照模式"
+        ],
+        "capital": []
+      },
+      "scores": {
+        "sentiment": 5,
+        "cycle": -3,
+        "sector": 7,
+        "kline": 5,
+        "capital": 0
+      },
+      "has_kline": [],
+      "price_pct": null,
+      "rsi": null,
+      "golden_cross": false,
+      "main_net": 0.0,
+      "chg_pct": 1.45,
+      "price": 19.59,
+      "industry": "影视院线",
+      "theme": "贵金属",
+      "code": "603721",
+      "name": "中广天择"
+    },
+    {
+      "score": 3.5,
+      "signals": {
+        "sentiment": [
+          "主线(1条)"
+        ],
+        "cycle": [
+          "周期decline(风险)"
+        ],
+        "sector": [
+          "活跃出版"
+        ],
+        "kline": [
+          "温和+0.9%",
+          "快照模式"
+        ],
+        "capital": []
+      },
+      "scores": {
+        "sentiment": 5,
+        "cycle": -3,
+        "sector": 7,
+        "kline": 5,
+        "capital": 0
+      },
+      "has_kline": [],
+      "price_pct": null,
+      "rsi": null,
+      "golden_cross": false,
+      "main_net": 0.0,
+      "chg_pct": 0.86,
+      "price": 7.02,
+      "industry": "出版",
+      "theme": "贵金属",
+      "code": "603999",
+      "name": "读者传媒"
+    },
+    {
+      "score": 3.5,
+      "signals": {
+        "sentiment": [
+          "主线(1条)"
+        ],
+        "cycle": [
+          "周期decline(风险)"
+        ],
+        "sector": [
+          "活跃出版"
+        ],
+        "kline": [
+          "温和+1.9%",
+          "快照模式"
+        ],
+        "capital": []
+      },
+      "scores": {
+        "sentiment": 5,
+        "cycle": -3,
+        "sector": 7,
+        "kline": 5,
+        "capital": 0
+      },
+      "has_kline": [],
+      "price_pct": null,
+      "rsi": null,
+      "golden_cross": false,
+      "main_net": 0.0,
+      "chg_pct": 1.9,
+      "price": 12.85,
+      "industry": "出版",
+      "theme": "贵金属",
+      "code": "000719",
+      "name": "中原传媒"
+    },
+    {
+      "score": 3.5,
+      "signals": {
+        "sentiment": [
+          "主线(1条)"
+        ],
+        "cycle": [
+          "周期decline(风险)"
+        ],
+        "sector": [
+          "活跃影视院线"
+        ],
+        "kline": [
+          "温和+0.2%",
+          "快照模式"
+        ],
+        "capital": []
+      },
+      "scores": {
+        "sentiment": 5,
+        "cycle": -3,
+        "sector": 7,
+        "kline": 5,
+        "capital": 0
+      },
+      "has_kline": [],
+      "price_pct": null,
+      "rsi": null,
+      "golden_cross": false,
+      "main_net": 0.0,
+      "chg_pct": 0.25,
+      "price": 4.06,
+      "industry": "影视院线",
+      "theme": "贵金属",
+      "code": "000802",
+      "name": "北京文化"
+    },
+    {
+      "score": 3.5,
+      "signals": {
+        "sentiment": [
+          "主线(1条)"
+        ],
+        "cycle": [
+          "周期decline(风险)"
+        ],
+        "sector": [
+          "活跃影视院线"
+        ],
+        "kline": [
+          "温和+1.9%",
+          "快照模式"
+        ],
+        "capital": []
+      },
+      "scores": {
+        "sentiment": 5,
+        "cycle": -3,
+        "sector": 7,
+        "kline": 5,
+        "capital": 0
+      },
+      "has_kline": [],
+      "price_pct": null,
+      "rsi": null,
+      "golden_cross": false,
+      "main_net": 0.0,
+      "chg_pct": 1.93,
+      "price": 8.46,
+      "industry": "影视院线",
+      "theme": "贵金属",
+      "code": "002739",
+      "name": "儒意电影"
+    },
+    {
+      "score": 3.5,
+      "signals": {
+        "sentiment": [
+          "主线(1条)"
+        ],
+        "cycle": [
+          "周期decline(风险)"
+        ],
+        "sector": [
+          "活跃影视院线"
+        ],
+        "kline": [
+          "温和+1.3%",
+          "快照模式"
+        ],
+        "capital": []
+      },
+      "scores": {
+        "sentiment": 5,
+        "cycle": -3,
+        "sector": 7,
+        "kline": 5,
+        "capital": 0
+      },
+      "has_kline": [],
+      "price_pct": null,
+      "rsi": null,
+      "golden_cross": false,
+      "main_net": 0.0,
+      "chg_pct": 1.33,
+      "price": 9.17,
+      "industry": "影视院线",
+      "theme": "贵金属",
+      "code": "002905",
+      "name": "金逸影视"
+    },
+    {
+      "score": 3.5,
+      "signals": {
+        "sentiment": [
+          "主线(1条)"
+        ],
+        "cycle": [
+          "周期decline(风险)"
+        ],
+        "sector": [
+          "活跃出版"
+        ],
+        "kline": [
+          "温和+0.8%",
+          "快照模式"
+        ],
+        "capital": []
+      },
+      "scores": {
+        "sentiment": 5,
+        "cycle": -3,
+        "sector": 7,
+        "kline": 5,
+        "capital": 0
+      },
+      "has_kline": [],
+      "price_pct": null,
+      "rsi": null,
+      "golden_cross": false,
+      "main_net": 0.0,
+      "chg_pct": 0.82,
+      "price": 3.7,
+      "industry": "出版",
+      "theme": "贵金属",
+      "code": "300148",
+      "name": "天舟文化"
+    },
+    {
+      "score": 3.5,
+      "signals": {
+        "sentiment": [
+          "主线(1条)"
+        ],
+        "cycle": [
+          "周期decline(风险)"
+        ],
+        "sector": [
+          "活跃影视院线"
+        ],
+        "kline": [
+          "温和+2.2%",
+          "快照模式"
+        ],
+        "capital": []
+      },
+      "scores": {
+        "sentiment": 5,
+        "cycle": -3,
+        "sector": 7,
+        "kline": 5,
+        "capital": 0
+      },
+      "has_kline": [],
+      "price_pct": null,
+      "rsi": null,
+      "golden_cross": false,
+      "main_net": 0.0,
+      "chg_pct": 2.16,
+      "price": 5.68,
+      "industry": "影视院线",
+      "theme": "贵金属",
+      "code": "300182",
+      "name": "捷成股份"
+    },
+    {
+      "score": 3.5,
+      "signals": {
+        "sentiment": [
+          "主线(1条)"
+        ],
+        "cycle": [
+          "周期decline(风险)"
+        ],
+        "sector": [
+          "活跃影视院线"
+        ],
+        "kline": [
+          "温和+2.3%",
+          "快照模式"
+        ],
+        "capital": []
+      },
+      "scores": {
+        "sentiment": 5,
+        "cycle": -3,
+        "sector": 7,
+        "kline": 5,
+        "capital": 0
+      },
+      "has_kline": [],
+      "price_pct": null,
+      "rsi": null,
+      "golden_cross": false,
+      "main_net": 0.0,
+      "chg_pct": 2.3,
+      "price": 13.81,
+      "industry": "影视院线",
+      "theme": "贵金属",
+      "code": "300528",
+      "name": "幸福蓝海"
+    },
+    {
+      "score": 3.5,
+      "signals": {
+        "sentiment": [
+          "主线(1条)"
+        ],
+        "cycle": [
+          "周期decline(风险)"
+        ],
+        "sector": [
+          "活跃出版"
+        ],
+        "kline": [
+          "温和+2.0%",
+          "快照模式"
+        ],
+        "capital": []
+      },
+      "scores": {
+        "sentiment": 5,
+        "cycle": -3,
+        "sector": 7,
+        "kline": 5,
+        "capital": 0
+      },
+      "has_kline": [],
+      "price_pct": null,
+      "rsi": null,
+      "golden_cross": false,
+      "main_net": 0.0,
+      "chg_pct": 2.01,
+      "price": 10.67,
+      "industry": "出版",
+      "theme": "贵金属",
+      "code": "301025",
+      "name": "读客文化"
+    },
+    {
+      "score": 3.0,
+      "signals": {
+        "sentiment": [
+          "主线(1条)"
+        ],
+        "cycle": [
+          "周期decline(风险)"
+        ],
+        "sector": [
+          "活跃银行Ⅱ"
+        ],
+        "kline": [
+          "温和+1.6%",
+          "快照模式"
+        ],
+        "capital": []
+      },
+      "scores": {
+        "sentiment": 5,
+        "cycle": -3,
+        "sector": 5,
+        "kline": 5,
+        "capital": 0
+      },
+      "has_kline": [],
+      "price_pct": null,
+      "rsi": null,
+      "golden_cross": false,
+      "main_net": 0.0,
+      "chg_pct": 1.55,
+      "price": 11.77,
+      "industry": "银行Ⅱ",
+      "theme": "贵金属",
+      "code": "000001",
+      "name": "平安银行"
+    },
+    {
+      "score": 3.0,
+      "signals": {
+        "sentiment": [
+          "主线(1条)"
+        ],
+        "cycle": [
+          "周期decline(风险)"
+        ],
+        "sector": [
+          "活跃银行Ⅱ"
+        ],
+        "kline": [
+          "温和+1.3%",
+          "快照模式"
+        ],
+        "capital": []
+      },
+      "scores": {
+        "sentiment": 5,
+        "cycle": -3,
+        "sector": 5,
+        "kline": 5,
+        "capital": 0
+      },
+      "has_kline": [],
+      "price_pct": null,
+      "rsi": null,
+      "golden_cross": false,
+      "main_net": 0.0,
+      "chg_pct": 1.26,
+      "price": 9.66,
+      "industry": "银行Ⅱ",
+      "theme": "贵金属",
+      "code": "600000",
+      "name": "浦发银行"
+    },
+    {
+      "score": 3.0,
+      "signals": {
+        "sentiment": [
+          "主线(1条)"
+        ],
+        "cycle": [
+          "周期decline(风险)"
+        ],
+        "sector": [
+          "活跃银行Ⅱ"
+        ],
+        "kline": [
+          "温和+1.3%",
+          "快照模式"
+        ],
+        "capital": []
+      },
+      "scores": {
+        "sentiment": 5,
+        "cycle": -3,
+        "sector": 5,
+        "kline": 5,
+        "capital": 0
+      },
+      "has_kline": [],
+      "price_pct": null,
+      "rsi": null,
+      "golden_cross": false,
+      "main_net": 0.0,
+      "chg_pct": 1.27,
+      "price": 6.38,
+      "industry": "银行Ⅱ",
+      "theme": "贵金属",
+      "code": "600015",
+      "name": "华夏银行"
+    },
+    {
+      "score": 3.0,
+      "signals": {
+        "sentiment": [
+          "主线(1条)"
+        ],
+        "cycle": [
+          "周期decline(风险)"
+        ],
+        "sector": [
+          "活跃银行Ⅱ"
+        ],
+        "kline": [
+          "温和+1.7%",
+          "快照模式"
+        ],
+        "capital": []
+      },
+      "scores": {
+        "sentiment": 5,
+        "cycle": -3,
+        "sector": 5,
+        "kline": 5,
+        "capital": 0
+      },
+      "has_kline": [],
+      "price_pct": null,
+      "rsi": null,
+      "golden_cross": false,
+      "main_net": 0.0,
+      "chg_pct": 1.72,
+      "price": 3.55,
+      "industry": "银行Ⅱ",
+      "theme": "贵金属",
+      "code": "600016",
+      "name": "民生银行"
+    },
+    {
+      "score": 3.0,
+      "signals": {
+        "sentiment": [
+          "主线(1条)"
+        ],
+        "cycle": [
+          "周期decline(风险)"
+        ],
+        "sector": [
+          "活跃银行Ⅱ"
+        ],
+        "kline": [
+          "温和+2.0%",
+          "快照模式"
+        ],
+        "capital": []
+      },
+      "scores": {
+        "sentiment": 5,
+        "cycle": -3,
+        "sector": 5,
+        "kline": 5,
+        "capital": 0
+      },
+      "has_kline": [],
+      "price_pct": null,
+      "rsi": null,
+      "golden_cross": false,
+      "main_net": 0.0,
+      "chg_pct": 2.05,
+      "price": 42.27,
+      "industry": "银行Ⅱ",
+      "theme": "贵金属",
+      "code": "600036",
+      "name": "招商银行"
+    },
+    {
+      "score": 3.0,
+      "signals": {
+        "sentiment": [
+          "主线(1条)"
+        ],
+        "cycle": [
+          "周期decline(风险)"
+        ],
+        "sector": [
+          "活跃风电设备"
+        ],
+        "kline": [
+          "温和+2.4%",
+          "快照模式"
+        ],
+        "capital": []
+      },
+      "scores": {
+        "sentiment": 5,
+        "cycle": -3,
+        "sector": 5,
+        "kline": 5,
+        "capital": 0
+      },
+      "has_kline": [],
+      "price_pct": null,
+      "rsi": null,
+      "golden_cross": false,
+      "main_net": 0.0,
+      "chg_pct": 2.35,
+      "price": 9.57,
+      "industry": "风电设备",
+      "theme": "贵金属",
+      "code": "600072",
+      "name": "中船科技"
+    },
+    {
+      "score": 3.0,
+      "signals": {
+        "sentiment": [
+          "主线(1条)"
+        ],
+        "cycle": [
+          "周期decline(风险)"
+        ],
+        "sector": [
+          "活跃银行Ⅱ"
+        ],
+        "kline": [
+          "温和+1.5%",
+          "快照模式"
+        ],
+        "capital": []
+      },
+      "scores": {
+        "sentiment": 5,
+        "cycle": -3,
+        "sector": 5,
+        "kline": 5,
+        "capital": 0
+      },
+      "has_kline": [],
+      "price_pct": null,
+      "rsi": null,
+      "golden_cross": false,
+      "main_net": 0.0,
+      "chg_pct": 1.53,
+      "price": 5.96,
+      "industry": "银行Ⅱ",
+      "theme": "贵金属",
+      "code": "600908",
+      "name": "无锡银行"
+    },
+    {
+      "score": 3.0,
+      "signals": {
+        "sentiment": [
+          "主线(1条)"
+        ],
+        "cycle": [
+          "周期decline(风险)"
+        ],
+        "sector": [
+          "活跃银行Ⅱ"
+        ],
+        "kline": [
+          "温和+2.2%",
+          "快照模式"
+        ],
+        "capital": []
+      },
+      "scores": {
+        "sentiment": 5,
+        "cycle": -3,
+        "sector": 5,
+        "kline": 5,
+        "capital": 0
+      },
+      "has_kline": [],
+      "price_pct": null,
+      "rsi": null,
+      "golden_cross": false,
+      "main_net": 0.0,
+      "chg_pct": 2.18,
+      "price": 12.64,
+      "industry": "银行Ⅱ",
+      "theme": "贵金属",
+      "code": "600919",
+      "name": "江苏银行"
+    },
+    {
+      "score": 3.0,
+      "signals": {
+        "sentiment": [
+          "主线(1条)"
+        ],
+        "cycle": [
+          "周期decline(风险)"
+        ],
+        "sector": [
+          "活跃银行Ⅱ"
+        ],
+        "kline": [
+          "温和+1.9%",
+          "快照模式"
+        ],
+        "capital": []
+      },
+      "scores": {
+        "sentiment": 5,
+        "cycle": -3,
+        "sector": 5,
+        "kline": 5,
+        "capital": 0
+      },
+      "has_kline": [],
+      "price_pct": null,
+      "rsi": null,
+      "golden_cross": false,
+      "main_net": 0.0,
+      "chg_pct": 1.87,
+      "price": 17.47,
+      "industry": "银行Ⅱ",
+      "theme": "贵金属",
+      "code": "600926",
+      "name": "杭州银行"
+    }
+  ],
+  "by_theme": {
+    "财政政策": {
+      "sentiment": 1,
+      "mainline": null,
+      "top3": [
+        {
+          "score": 2.7,
+          "signals": {
+            "sentiment": [],
+            "cycle": [
+              "周期decline(风险)"
+            ],
+            "sector": [
+              "活跃出版"
+            ],
+            "kline": [
+              "温和+1.4%",
+              "快照模式"
+            ],
+            "capital": []
+          },
+          "scores": {
+            "sentiment": 1,
+            "cycle": -3,
+            "sector": 7,
+            "kline": 5,
+            "capital": 0
+          },
+          "has_kline": [],
+          "price_pct": null,
+          "rsi": null,
+          "golden_cross": false,
+          "main_net": 0.0,
+          "chg_pct": 1.35,
+          "price": 5.99,
+          "industry": "出版",
+          "theme": "财政政策",
+          "code": "600229",
+          "name": "城市传媒"
+        },
+        {
+          "score": 2.7,
+          "signals": {
+            "sentiment": [],
+            "cycle": [
+              "周期decline(风险)"
+            ],
+            "sector": [
+              "活跃出版"
+            ],
+            "kline": [
+              "温和+2.0%",
+              "快照模式"
+            ],
+            "capital": []
+          },
+          "scores": {
+            "sentiment": 1,
+            "cycle": -3,
+            "sector": 7,
+            "kline": 5,
+            "capital": 0
+          },
+          "has_kline": [],
+          "price_pct": null,
+          "rsi": null,
+          "golden_cross": false,
+          "main_net": 0.0,
+          "chg_pct": 2.05,
+          "price": 7.97,
+          "industry": "出版",
+          "theme": "财政政策",
+          "code": "600373",
+          "name": "中文传媒"
+        },
+        {
+          "score": 2.7,
+          "signals": {
+            "sentiment": [],
+            "cycle": [
+              "周期decline(风险)"
+            ],
+            "sector": [
+              "活跃出版"
+            ],
+            "kline": [
+              "温和+2.8%",
+              "快照模式"
+            ],
+            "capital": []
+          },
+          "scores": {
+            "sentiment": 1,
+            "cycle": -3,
+            "sector": 7,
+            "kline": 5,
+            "capital": 0
+          },
+          "has_kline": [],
+          "price_pct": null,
+          "rsi": null,
+          "golden_cross": false,
+          "main_net": 0.0,
+          "chg_pct": 2.78,
+          "price": 7.77,
+          "industry": "出版",
+          "theme": "财政政策",
+          "code": "600757",
+          "name": "长江传媒"
+        }
+      ]
+    },
+    "房地产": {
+      "sentiment": 1,
+      "mainline": null,
+      "top3": [
+        {
+          "score": 2.7,
+          "signals": {
+            "sentiment": [],
+            "cycle": [
+              "周期decline(风险)"
+            ],
+            "sector": [
+              "活跃出版"
+            ],
+            "kline": [
+              "温和+1.4%",
+              "快照模式"
+            ],
+            "capital": []
+          },
+          "scores": {
+            "sentiment": 1,
+            "cycle": -3,
+            "sector": 7,
+            "kline": 5,
+            "capital": 0
+          },
+          "has_kline": [],
+          "price_pct": null,
+          "rsi": null,
+          "golden_cross": false,
+          "main_net": 0.0,
+          "chg_pct": 1.35,
+          "price": 5.99,
+          "industry": "出版",
+          "theme": "房地产",
+          "code": "600229",
+          "name": "城市传媒"
+        },
+        {
+          "score": 2.7,
+          "signals": {
+            "sentiment": [],
+            "cycle": [
+              "周期decline(风险)"
+            ],
+            "sector": [
+              "活跃出版"
+            ],
+            "kline": [
+              "温和+2.0%",
+              "快照模式"
+            ],
+            "capital": []
+          },
+          "scores": {
+            "sentiment": 1,
+            "cycle": -3,
+            "sector": 7,
+            "kline": 5,
+            "capital": 0
+          },
+          "has_kline": [],
+          "price_pct": null,
+          "rsi": null,
+          "golden_cross": false,
+          "main_net": 0.0,
+          "chg_pct": 2.05,
+          "price": 7.97,
+          "industry": "出版",
+          "theme": "房地产",
+          "code": "600373",
+          "name": "中文传媒"
+        },
+        {
+          "score": 2.7,
+          "signals": {
+            "sentiment": [],
+            "cycle": [
+              "周期decline(风险)"
+            ],
+            "sector": [
+              "活跃出版"
+            ],
+            "kline": [
+              "温和+2.8%",
+              "快照模式"
+            ],
+            "capital": []
+          },
+          "scores": {
+            "sentiment": 1,
+            "cycle": -3,
+            "sector": 7,
+            "kline": 5,
+            "capital": 0
+          },
+          "has_kline": [],
+          "price_pct": null,
+          "rsi": null,
+          "golden_cross": false,
+          "main_net": 0.0,
+          "chg_pct": 2.78,
+          "price": 7.77,
+          "industry": "出版",
+          "theme": "房地产",
+          "code": "600757",
+          "name": "长江传媒"
+        }
+      ]
+    },
+    "消费": {
+      "sentiment": 1,
+      "mainline": null,
+      "top3": [
+        {
+          "score": 2.7,
+          "signals": {
+            "sentiment": [],
+            "cycle": [
+              "周期decline(风险)"
+            ],
+            "sector": [
+              "活跃出版"
+            ],
+            "kline": [
+              "温和+1.4%",
+              "快照模式"
+            ],
+            "capital": []
+          },
+          "scores": {
+            "sentiment": 1,
+            "cycle": -3,
+            "sector": 7,
+            "kline": 5,
+            "capital": 0
+          },
+          "has_kline": [],
+          "price_pct": null,
+          "rsi": null,
+          "golden_cross": false,
+          "main_net": 0.0,
+          "chg_pct": 1.35,
+          "price": 5.99,
+          "industry": "出版",
+          "theme": "消费",
+          "code": "600229",
+          "name": "城市传媒"
+        },
+        {
+          "score": 2.7,
+          "signals": {
+            "sentiment": [],
+            "cycle": [
+              "周期decline(风险)"
+            ],
+            "sector": [
+              "活跃出版"
+            ],
+            "kline": [
+              "温和+2.0%",
+              "快照模式"
+            ],
+            "capital": []
+          },
+          "scores": {
+            "sentiment": 1,
+            "cycle": -3,
+            "sector": 7,
+            "kline": 5,
+            "capital": 0
+          },
+          "has_kline": [],
+          "price_pct": null,
+          "rsi": null,
+          "golden_cross": false,
+          "main_net": 0.0,
+          "chg_pct": 2.05,
+          "price": 7.97,
+          "industry": "出版",
+          "theme": "消费",
+          "code": "600373",
+          "name": "中文传媒"
+        },
+        {
+          "score": 2.7,
+          "signals": {
+            "sentiment": [],
+            "cycle": [
+              "周期decline(风险)"
+            ],
+            "sector": [
+              "活跃出版"
+            ],
+            "kline": [
+              "温和+2.8%",
+              "快照模式"
+            ],
+            "capital": []
+          },
+          "scores": {
+            "sentiment": 1,
+            "cycle": -3,
+            "sector": 7,
+            "kline": 5,
+            "capital": 0
+          },
+          "has_kline": [],
+          "price_pct": null,
+          "rsi": null,
+          "golden_cross": false,
+          "main_net": 0.0,
+          "chg_pct": 2.78,
+          "price": 7.77,
+          "industry": "出版",
+          "theme": "消费",
+          "code": "600757",
+          "name": "长江传媒"
+        }
+      ]
+    },
+    "贵金属": {
+      "sentiment": 1,
+      "mainline": 100.0,
+      "top3": [
+        {
+          "score": 3.5,
+          "signals": {
+            "sentiment": [
+              "主线(1条)"
+            ],
+            "cycle": [
+              "周期decline(风险)"
+            ],
+            "sector": [
+              "活跃出版"
+            ],
+            "kline": [
+              "温和+1.4%",
+              "快照模式"
+            ],
+            "capital": []
+          },
+          "scores": {
+            "sentiment": 5,
+            "cycle": -3,
+            "sector": 7,
+            "kline": 5,
+            "capital": 0
+          },
+          "has_kline": [],
+          "price_pct": null,
+          "rsi": null,
+          "golden_cross": false,
+          "main_net": 0.0,
+          "chg_pct": 1.35,
+          "price": 5.99,
+          "industry": "出版",
+          "theme": "贵金属",
+          "code": "600229",
+          "name": "城市传媒"
+        },
+        {
+          "score": 3.5,
+          "signals": {
+            "sentiment": [
+              "主线(1条)"
+            ],
+            "cycle": [
+              "周期decline(风险)"
+            ],
+            "sector": [
+              "活跃出版"
+            ],
+            "kline": [
+              "温和+2.0%",
+              "快照模式"
+            ],
+            "capital": []
+          },
+          "scores": {
+            "sentiment": 5,
+            "cycle": -3,
+            "sector": 7,
+            "kline": 5,
+            "capital": 0
+          },
+          "has_kline": [],
+          "price_pct": null,
+          "rsi": null,
+          "golden_cross": false,
+          "main_net": 0.0,
+          "chg_pct": 2.05,
+          "price": 7.97,
+          "industry": "出版",
+          "theme": "贵金属",
+          "code": "600373",
+          "name": "中文传媒"
+        },
+        {
+          "score": 3.5,
+          "signals": {
+            "sentiment": [
+              "主线(1条)"
+            ],
+            "cycle": [
+              "周期decline(风险)"
+            ],
+            "sector": [
+              "活跃出版"
+            ],
+            "kline": [
+              "温和+2.8%",
+              "快照模式"
+            ],
+            "capital": []
+          },
+          "scores": {
+            "sentiment": 5,
+            "cycle": -3,
+            "sector": 7,
+            "kline": 5,
+            "capital": 0
+          },
+          "has_kline": [],
+          "price_pct": null,
+          "rsi": null,
+          "golden_cross": false,
+          "main_net": 0.0,
+          "chg_pct": 2.78,
+          "price": 7.77,
+          "industry": "出版",
+          "theme": "贵金属",
+          "code": "600757",
+          "name": "长江传媒"
+        }
+      ]
+    }
+  }
+}

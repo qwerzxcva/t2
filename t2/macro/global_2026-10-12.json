@@ -1,0 +1,141 @@
+{
+  "date": "2026-10-12",
+  "items": {
+    "usDJI": {
+      "code": "usDJI",
+      "name": "道琼斯",
+      "group": "美股指数",
+      "price": 51654.95,
+      "chg_pct": 0.83,
+      "time": "2026-10-09 16:"
+    },
+    "usIXIC": {
+      "code": "usIXIC",
+      "name": "纳斯达克",
+      "group": "美股指数",
+      "price": 27366.17,
+      "chg_pct": 0.64,
+      "time": "2026-10-09 17:"
+    },
+    "usINX": {
+      "code": "usINX",
+      "name": "标普500",
+      "group": "美股指数",
+      "price": 7811.54,
+      "chg_pct": 0.59,
+      "time": "2026-10-09 17:"
+    },
+    "usVIX": {
+      "code": "usVIX",
+      "name": "VIX恐慌",
+      "group": "美股指数",
+      "price": 21.67,
+      "chg_pct": 0.0,
+      "time": "2026-09-15 09:"
+    },
+    "usSOXX": {
+      "code": "usSOXX",
+      "name": "费半ETF",
+      "group": "半导体关联",
+      "price": 559.4,
+      "chg_pct": -0.69,
+      "time": "2026-10-09 16:"
+    },
+    "usKWEB": {
+      "code": "usKWEB",
+      "name": "中概ETF",
+      "group": "中概关联",
+      "price": 24.93,
+      "chg_pct": 3.79,
+      "time": "2026-10-09 16:"
+    },
+    "usFXI": {
+      "code": "usFXI",
+      "name": "中国大盘ETF",
+      "group": "中概关联",
+      "price": 34.24,
+      "chg_pct": 2.36,
+      "time": "2026-10-09 16:"
+    },
+    "usMCHI": {
+      "code": "usMCHI",
+      "name": "中国ETF",
+      "group": "中概关联",
+      "price": 52.55,
+      "chg_pct": 2.32,
+      "time": "2026-10-09 16:"
+    },
+    "usQQQ": {
+      "code": "usQQQ",
+      "name": "纳指100ETF",
+      "group": "美股指数",
+      "price": 751.27,
+      "chg_pct": 0.49,
+      "time": "2026-10-09 16:"
+    },
+    "hkHSI": {
+      "code": "hkHSI",
+      "name": "恒生指数",
+      "group": "港股",
+      "price": 24271.01,
+      "chg_pct": 0.25,
+      "time": "2026/10/12 14:"
+    },
+    "hkHSTECH": {
+      "code": "hkHSTECH",
+      "name": "恒生科技",
+      "group": "港股",
+      "price": 4174.13,
+      "chg_pct": -0.56,
+      "time": "2026/10/12 14:"
+    },
+    "hf_XAU": {
+      "code": "hf_XAU",
+      "name": "伦敦金",
+      "group": "商品",
+      "price": 4185.42,
+      "chg_pct": -0.21,
+      "time": "14:51:00"
+    },
+    "hf_CL": {
+      "code": "hf_CL",
+      "name": "WTI原油",
+      "group": "商品",
+      "price": 91.45,
+      "chg_pct": -0.43,
+      "time": "14:52:02"
+    },
+    "hf_CHA50CFD": {
+      "code": "hf_CHA50CFD",
+      "name": "富时A50期货",
+      "group": "中国关联",
+      "price": 13753.9,
+      "chg_pct": -0.001,
+      "time": "13753.900"
+    },
+    "fx_susdcnh": {
+      "code": "fx_susdcnh",
+      "name": "离岸人民币",
+      "group": "汇率",
+      "price": 6.6924,
+      "chg_pct": -0.004,
+      "time": "14:52:20"
+    }
+  },
+  "signals": [
+    "富时A50期货 -0.00% → 开盘预期外资流出",
+    "中概KWEB +3.79% → 外资对A股情绪偏多",
+    "VIX 21.7 → 中波动",
+    "离岸人民币 -0.00% → 升值(外资成本降)",
+    "费半ETF -0.69% → A股半导体情绪锚看空",
+    "★ 外部情绪综合分: +7 (中性) → 大A开盘外部阻力小"
+  ],
+  "mood": "中性",
+  "metrics": {
+    "a50_pct": -0.001,
+    "kweb_pct": 3.79,
+    "vix": 21.67,
+    "cny_pct": -0.004,
+    "sox_pct": -0.69
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "ts": "2026-10-12T00:53:37.210611+08:00",
+  "source": "tsp-v3",
+  "market": {
+    "indices": [
+      {
+        "code": "sh000001",
+        "name": "上证指数",
+        "price": 3813.79,
+        "prev": 3811.9,
+        "chg_pct": 0.05
+      },
+      {
+        "code": "sz399001",
+        "name": "深证成指",
+        "price": 12641.86,
+        "prev": 12620.9,
+        "chg_pct": 0.17
+      },
+      {
+        "code": "sh000300",
+        "name": "沪深300",
+        "price": 4317.25,
+        "prev": 4310.28,
+        "chg_pct": 0.16
+      },
+      {
+        "code": "sh000688",
+        "name": "科创50",
+        "price": 1457.27,
+        "prev": 1456.32,
+        "chg_pct": 0.07
+      },
+      {
+        "code": "sz399006",
+        "name": "创业板指",
+        "price": 3043.33,
+        "prev": 3036.66,
+        "chg_pct": 0.22
+      },
+      {
+        "code": "bj899050",
+        "name": "北证50",
+        "price": 1037.31,
+        "prev": 1012.1,
+        "chg_pct": 2.49
+      }
+    ],
+    "limit_up": 69,
+    "limit_down": 0,
+    "broken": 14,
+    "zt_rate": 83.1,
+    "yesterday_zt": 69
+  },
+  "phase": {
+    "score": 81.7,
+    "stage": "修复",
+    "desc": "常规波动, 无显著方向",
+    "seal_rate": 83.1,
+    "max_boards": 9,
+    "ge2": 12,
+    "first_board": 57,
+    "promo_rate": 0.174,
+    "components": {
+      "speculation": 86.5,
+      "profit": 100.0,
+      "resilience": 51.0
+    }
+  },
+  "themes_count": 8,
+  "picks_top3": [
+    {
+      "code": "600825",
+      "name": "新华传媒",
+      "score": 82.5
+    },
+    {
+      "code": "002242",
+      "name": "九阳股份",
+      "score": 81.4
+    },
+    {
+      "code": "600241",
+      "name": "时代万恒",
+      "score": 80.0
+    }
+  ],
+  "meta": {
+    "source": "tencent+eastmoney+sina",
+    "algo": "tsp-signal-v3",
+    "zero_cred": true,
+    "ref": "shy3130/tick-stock-panel"
+  }
+}

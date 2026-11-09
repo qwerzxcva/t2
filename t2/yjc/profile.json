@@ -1,0 +1,20 @@
+{
+  "code": 1,
+  "msg": "获取成功",
+  "data": {
+    "userId": "user_1791736657270_ze6m82umb",
+    "username": "3576982374",
+    "nickname": "jiegengxia",
+    "avatar": "",
+    "signature": "",
+    "status": "active",
+    "createdAt": "2026-10-12 00:37:37",
+    "memberLevel": 0,
+    "memberExpireAt": null,
+    "isPermanentMember": false,
+    "donationAnonymous": 1,
+    "donationHideAmount": 0,
+    "memberExpireNotify": false
+  },
+  "status": 200
+}
